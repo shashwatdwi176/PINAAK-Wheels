@@ -1,0 +1,11 @@
+{
+  "name": "pinaak-wheels",
+  "version": "1.0.0",
+  "description": "A Microservice Ride Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
