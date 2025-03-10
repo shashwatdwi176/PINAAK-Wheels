@@ -58,7 +58,5 @@ Postman Collection: [Click here]([your-postman-collection-url](https://www.postm
 ## Contributing
 Feel free to fork and contribute! Open an issue or submit a pull request for improvements.
 
-## License
-This project is licensed under the MIT License.
 
 🚀 PINAAK-Wheels - Efficient, scalable, and real-time cab ride management!
