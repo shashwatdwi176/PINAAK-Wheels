@@ -8,6 +8,6 @@ router.post('/register', captainController.register);
 router.post('/login' , captainController.login)
 router.get('/logout' , captainController.logout)
 router.get('/profile', authMiddleware.captainAuth, captainController.profile);
-router.patch('/toogle-availability', authMiddleware.captainAuth, captainController.toggleAvailability)
+router.patch('/toggle-availability', authMiddleware.captainAuth, captainController.toggleAvailability)
 
 module.exports = router
