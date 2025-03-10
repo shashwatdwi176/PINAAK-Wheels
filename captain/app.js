@@ -8,6 +8,9 @@ const connect = require('./db/db')
 connect()
 const captainRoutes = require("./routes/caption.routes")
 const cookieParser = require('cookie-parser')
+const rabbitMq = require('./service/rabbit')
+
+rabbitMq.connect()
 
 app.use(express.json());
 app.use("/", captainRoutes)
