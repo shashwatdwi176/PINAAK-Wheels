@@ -6,11 +6,11 @@ const app = express();
 
 const connect = require('./db/db')
 connect()
-const userRoutes = require("./routes/user.routes")
+const captainRoutes = require("./routes/caption.routes")
 const cookieParser = require('cookie-parser')
 
 app.use(express.json());
-app.use("/", userRoutes)
+app.use("/", captainRoutes)
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 

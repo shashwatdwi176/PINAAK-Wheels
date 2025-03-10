@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
-const userModel = require("../models/user.model");
+const captainModel = require("../models/captain.model");
 const blacklisttokenModel = require("../models/blacklisttoken.model");
 
-module.exports.userAuth = async (req, res, next) => {
+module.exports.captainAuth = async (req, res, next) => {
     try {
         // Extract token from cookies or Authorization header
         const token = req.cookies?.token || req.headers.authorization?.split(" ")[1];
@@ -24,14 +24,14 @@ module.exports.userAuth = async (req, res, next) => {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         console.log("Decoded JWT:", decoded);
 
-        // Find user by decoded ID
-        const user = await userModel.findById(decoded.id);
-        if (!user) {
-            return res.status(401).json({ message: "Unauthorized: User Not Found" });
+        // Find captain by decoded ID
+        const captain = await captainModel.findById(decoded.id);
+        if (!captain) {
+            return res.status(401).json({ message: "Unauthorized: Captain Not Found" });
         }
 
-        // Attach user to request
-        req.user = user;
+        // Attach captain to request
+        req.captain = captain;
         next();
     } catch (error) {
         console.error("Auth Middleware Error:", error.message);
